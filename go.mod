@@ -1,4 +1,4 @@
-module github.com/accretional/proto-microdata
+module github.com/accretional/proto-schemaorg
 
 go 1.26
 

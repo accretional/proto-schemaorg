@@ -13,5 +13,5 @@ go run ./cmd/genast \
   -proto proto/schemaorg.proto \
   -fdset proto/schemaorg.fdset \
   -package schemaorg \
-  -go-package 'github.com/accretional/proto-microdata/proto/pb/schemaorg;schemaorgpb' \
+  -go-package 'github.com/accretional/proto-schemaorg/proto/pb/schemaorg;schemaorgpb' \
   "$@"

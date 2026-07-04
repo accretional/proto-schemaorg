@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package schemaorg;
 
-option go_package = "github.com/accretional/proto-microdata/proto/pb/schemaorg;schemaorgpb";
+option go_package = "github.com/accretional/proto-schemaorg/proto/pb/schemaorg;schemaorgpb";
 
 message SchemaOrgDocument {
   repeated TopLevelItem top_level_item = 1;
