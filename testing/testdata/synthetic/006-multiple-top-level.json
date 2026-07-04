@@ -1,0 +1,18 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Two independent top-level items in one document, emitted in tree order.",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["First Person"]
+      }
+    },
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["Second Person"]
+      }
+    }
+  ]
+}

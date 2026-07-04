@@ -1,0 +1,7 @@
+{
+  "url": "https://openlibrary.org/works/OL45804W/Fantastic_Mr_Fox",
+  "fetched": "2026-07-03",
+  "source_desc": "Open Library work page for 'Fantastic Mr Fox'.",
+  "schema_types_seen": ["Book"],
+  "notes": "A single live Book item with several nested itemprops (name, author, etc.) but no explicit sub-item itemtypes. Different source/markup style from the Gutenberg Book page. itemtype uses https://schema.org/."
+}

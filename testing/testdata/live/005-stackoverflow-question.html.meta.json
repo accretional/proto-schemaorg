@@ -1,0 +1,7 @@
+{
+  "url": "https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array",
+  "fetched": "2026-07-03",
+  "source_desc": "A real Stack Overflow Q&A page (the famous 'sorted array' question). The richest microdata sample in the corpus.",
+  "schema_types_seen": ["QAPage", "Question", "Answer", "Comment", "Person"],
+  "notes": "Deeply nested, real-world microdata: one QAPage containing one Question and many Answer items, each with nested Comment and Person items. Mixes http://schema.org/ (some Person items) and https://schema.org/ URLs in the same document - a good normalization test. Large page (~1.2MB) of messy production HTML."
+}

@@ -1,0 +1,7 @@
+{
+  "url": "https://www.humanlevel.com/en/blog/seo/how-to-mark-products-in-your-online-store-with-microdata",
+  "fetched": "2026-07-03",
+  "source_desc": "A Human Level SEO blog article explaining how to mark up products with microdata.",
+  "schema_types_seen": ["Blog", "CreativeWork"],
+  "notes": "Instructive mixed case: the page's live microdata is only Blog + CreativeWork (the blog chrome), using https://schema.org/. The article body also contains many HTML-ESCAPED example snippets referencing http://schema.org/Product, Offer, Brand, AggregateRating, Rating and Review - these appear in the raw bytes but are NOT live attributes. Good for testing that an extractor ignores escaped code samples while still capturing the real Blog/CreativeWork items."
+}

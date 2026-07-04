@@ -1,0 +1,7 @@
+{
+  "url": "https://www.w3resource.com/schema.org/Recipe.php",
+  "fetched": "2026-07-03",
+  "source_desc": "A w3resource tutorial page about the schema.org Recipe type.",
+  "schema_types_seen": ["TechArticle"],
+  "notes": "The page's own live microdata is a TechArticle item wrapping the tutorial body, with ~14 live itemscope elements (nested itemprops, mostly untyped). The Recipe example markup discussed in the tutorial is HTML-escaped and not live - another mixed live/escaped real-world case. itemtype uses https://schema.org/."
+}

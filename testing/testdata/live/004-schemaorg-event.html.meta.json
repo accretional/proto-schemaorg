@@ -1,0 +1,7 @@
+{
+  "url": "https://schema.org/Event",
+  "fetched": "2026-07-03",
+  "source_desc": "schema.org's own documentation page for the Event type.",
+  "schema_types_seen": ["BreadcrumbList", "ListItem", "SoftwareSourceCode"],
+  "notes": "Live microdata is the breadcrumb + many SoftwareSourceCode code samples. Per-type Event examples are HTML-escaped and not live. itemtype uses https://schema.org/."
+}

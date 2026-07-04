@@ -1,0 +1,13 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Multi-token itemprop: one element with itemprop=\"name additionalName\" files the same value under BOTH property names, in authored token order.",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["Jay"],
+        "additionalName": ["Jay"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Deeply nested (3+ levels): Recipe (L1) -> nutrition (NutritionInformation, L2) and recipeInstructions (HowToSection, L2) -> itemListElement (HowToStep, L3).",
+  "items": [
+    {
+      "type": ["https://schema.org/Recipe"],
+      "properties": {
+        "name": ["Chocolate Cake"],
+        "recipeYield": ["8 servings"],
+        "nutrition": [
+          {
+            "type": ["https://schema.org/NutritionInformation"],
+            "properties": {
+              "calories": ["350 calories"],
+              "fatContent": ["18 g"]
+            }
+          }
+        ],
+        "recipeInstructions": [
+          {
+            "type": ["https://schema.org/HowToSection"],
+            "properties": {
+              "name": ["Baking"],
+              "itemListElement": [
+                {
+                  "type": ["https://schema.org/HowToStep"],
+                  "properties": {
+                    "text": ["Preheat oven to 350F."]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

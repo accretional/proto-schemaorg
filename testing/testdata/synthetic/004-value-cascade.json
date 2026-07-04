@@ -1,0 +1,27 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Property-value cascade: one property per element type from the digest table. URL-valued elements (img/a/link/object/audio/video/embed/iframe/source/track/area) resolve against the base; meta/data/meter/time/textContent are literal. The inner <video> has no itemprop so its subtree is crawled, exposing source and track. Property order follows the section-3 tree-order sort.",
+  "items": [
+    {
+      "type": ["https://schema.org/CreativeWork"],
+      "properties": {
+        "metaProp": ["meta literal value"],
+        "imgProp": ["https://example.com/media/photo.jpg"],
+        "aProp": ["https://example.com/page/a"],
+        "linkProp": ["https://example.com/page/link"],
+        "objectProp": ["https://example.com/media/obj.swf"],
+        "dataProp": ["data-literal-123"],
+        "meterProp": ["0.75"],
+        "timeProp": ["2026-07-03"],
+        "audioProp": ["https://example.com/media/song.mp3"],
+        "videoProp": ["https://example.com/media/clip.mp4"],
+        "embedProp": ["https://example.com/media/plugin.swf"],
+        "iframeProp": ["https://example.com/embed/frame"],
+        "textProp": ["Plain text content"],
+        "sourceProp": ["https://example.com/media/alt.webm"],
+        "trackProp": ["https://example.com/media/subs.vtt"],
+        "areaProp": ["https://example.com/page/area"]
+      }
+    }
+  ]
+}

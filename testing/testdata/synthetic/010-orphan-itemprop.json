@@ -1,0 +1,5 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "itemprop with no itemscope ancestor: there are no items in the document, so no crawl ever reaches these elements. Extraction yields an empty items array (the orphan properties are a conformance error and are simply never emitted).",
+  "items": []
+}

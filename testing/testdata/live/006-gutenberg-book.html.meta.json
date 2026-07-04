@@ -1,0 +1,7 @@
+{
+  "url": "https://www.gutenberg.org/ebooks/1342",
+  "fetched": "2026-07-03",
+  "source_desc": "Project Gutenberg ebook landing page for 'Pride and Prejudice' (ebook #1342).",
+  "schema_types_seen": ["Book", "Offer", "BreadcrumbList", "ListItem"],
+  "notes": "Real, compact live microdata: a Book item with a nested Offer (free download), plus a BreadcrumbList of ListItems. Book and Offer use the older http://schema.org/ form while the breadcrumb uses https://schema.org/ - mixed-scheme document."
+}

@@ -1,0 +1,12 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Minimal single item: itemscope + itemtype=Person + one itemprop 'name'.",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["Jane Doe"]
+      }
+    }
+  ]
+}

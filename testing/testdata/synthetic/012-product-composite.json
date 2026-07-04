@@ -1,0 +1,38 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Real-world-shaped composite: Product with brand (Brand), offers (Offer: price, priceCurrency via meta content), and aggregateRating (AggregateRating: ratingValue, reviewCount). All values are strings.",
+  "items": [
+    {
+      "type": ["https://schema.org/Product"],
+      "properties": {
+        "name": ["Deluxe Widget"],
+        "brand": [
+          {
+            "type": ["https://schema.org/Brand"],
+            "properties": {
+              "name": ["Acme"]
+            }
+          }
+        ],
+        "offers": [
+          {
+            "type": ["https://schema.org/Offer"],
+            "properties": {
+              "price": ["19.99"],
+              "priceCurrency": ["USD"]
+            }
+          }
+        ],
+        "aggregateRating": [
+          {
+            "type": ["https://schema.org/AggregateRating"],
+            "properties": {
+              "ratingValue": ["4.5"],
+              "reviewCount": ["120"]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Nested item: Person.address -> PostalAddress (streetAddress, addressLocality, postalCode). The nested itemscope becomes a nested object value.",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["John Smith"],
+        "address": [
+          {
+            "type": ["https://schema.org/PostalAddress"],
+            "properties": {
+              "streetAddress": ["123 Main St"],
+              "addressLocality": ["Springfield"],
+              "postalCode": ["12345"]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

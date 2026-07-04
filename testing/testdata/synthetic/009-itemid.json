@@ -1,0 +1,14 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "itemid (with itemtype): a global identifier. The itemid is parsed as a URL relative to the document; 'urn:isbn:0-330-25864-8' is already absolute, so 'id' is emitted verbatim. 'id' appears only because the item is typed.",
+  "items": [
+    {
+      "type": ["https://schema.org/Book"],
+      "id": "urn:isbn:0-330-25864-8",
+      "properties": {
+        "name": ["The Hitchhiker's Guide"],
+        "author": ["Douglas Adams"]
+      }
+    }
+  ]
+}

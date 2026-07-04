@@ -1,0 +1,7 @@
+{
+  "url": "https://schema.org/Person",
+  "fetched": "2026-07-03",
+  "source_desc": "schema.org's own documentation page for the Person type.",
+  "schema_types_seen": ["BreadcrumbList", "ListItem", "SoftwareSourceCode"],
+  "notes": "Live in-DOM microdata is the page 'chrome': a BreadcrumbList of ListItems plus many SoftwareSourceCode blocks (the code samples). The per-type Microdata examples shown on the page (a Person example) are HTML-ESCAPED inside <pre>/<code> and are therefore NOT live microdata attributes - a good negative test that an extractor must not extract escaped example markup. itemtype values use https://schema.org/."
+}

@@ -1,0 +1,19 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Edge cases. First item: itemscope with no properties -> properties is an empty object. Second item: missing value-bearing attributes all yield \"\" — meta without content, data without value (its textContent is NOT used), img without src (URL resolution absent -> \"\"), a without href.",
+  "items": [
+    {
+      "type": ["https://schema.org/Thing"],
+      "properties": {}
+    },
+    {
+      "type": ["https://schema.org/Thing"],
+      "properties": {
+        "metaEmpty": [""],
+        "dataEmpty": [""],
+        "imgEmpty": [""],
+        "linkEmpty": [""]
+      }
+    }
+  ]
+}

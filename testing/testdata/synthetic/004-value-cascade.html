@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>004 Value Cascade</title>
+</head>
+<body>
+  <div itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="metaProp" content="meta literal value">
+    <img itemprop="imgProp" src="/media/photo.jpg" alt="p">
+    <a itemprop="aProp" href="/page/a">link a</a>
+    <link itemprop="linkProp" href="/page/link">
+    <object itemprop="objectProp" data="/media/obj.swf"></object>
+    <data itemprop="dataProp" value="data-literal-123">Displayed Text</data>
+    <meter itemprop="meterProp" value="0.75" min="0" max="1"></meter>
+    <time itemprop="timeProp" datetime="2026-07-03">July 3, 2026</time>
+    <audio itemprop="audioProp" src="/media/song.mp3"></audio>
+    <video itemprop="videoProp" src="/media/clip.mp4"></video>
+    <embed itemprop="embedProp" src="/media/plugin.swf" type="application/x-shockwave-flash">
+    <iframe itemprop="iframeProp" src="/embed/frame"></iframe>
+    <p itemprop="textProp">Plain text content</p>
+    <video>
+      <source itemprop="sourceProp" src="/media/alt.webm" type="video/webm">
+      <track itemprop="trackProp" src="/media/subs.vtt" kind="subtitles">
+    </video>
+    <map name="hotspots">
+      <area itemprop="areaProp" href="/page/area" shape="rect" coords="0,0,10,10" alt="a">
+    </map>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Multiple properties on one Person: name, jobTitle, email (text), url (a href resolved), image (img src resolved).",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["Jane Doe"],
+        "jobTitle": ["Software Engineer"],
+        "email": ["jane@example.com"],
+        "url": ["https://example.com/profile/jane"],
+        "image": ["https://example.com/img/jane.jpg"]
+      }
+    }
+  ]
+}

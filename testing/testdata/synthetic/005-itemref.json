@@ -1,0 +1,14 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "itemref: the Person pulls jobTitle and email from a non-descendant element (#extra-props) by id. The referenced element itself has no itemprop, so its children are crawled and contribute the properties. Order follows tree order (name first).",
+  "items": [
+    {
+      "type": ["https://schema.org/Person"],
+      "properties": {
+        "name": ["Alice"],
+        "jobTitle": ["Designer"],
+        "email": ["alice@example.com"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "Multi-token itemtype: two type URLs on one item; the 'type' array preserves authored order.",
+  "items": [
+    {
+      "type": ["https://schema.org/Product", "https://schema.org/IndividualProduct"],
+      "properties": {
+        "name": ["Widget"]
+      }
+    }
+  ]
+}

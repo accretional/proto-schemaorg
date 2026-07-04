@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>012 Product Composite</title>
+</head>
+<body>
+  <div itemscope itemtype="https://schema.org/Product">
+    <span itemprop="name">Deluxe Widget</span>
+    <div itemprop="brand" itemscope itemtype="https://schema.org/Brand">
+      <span itemprop="name">Acme</span>
+    </div>
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span itemprop="price">19.99</span>
+      <meta itemprop="priceCurrency" content="USD">
+    </div>
+    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+      <span itemprop="ratingValue">4.5</span>
+      <span itemprop="reviewCount">120</span>
+    </div>
+  </div>
+</body>
+</html>

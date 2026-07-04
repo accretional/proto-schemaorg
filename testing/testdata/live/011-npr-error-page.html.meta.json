@@ -1,0 +1,7 @@
+{
+  "url": "https://www.npr.org/2024/01/01/nx-s1-1234567/news",
+  "fetched": "2026-07-03",
+  "source_desc": "NPR error/404 page (returned when requesting a non-existent article URL). Kept because its template still emits live microdata.",
+  "schema_types_seen": ["SpeakableSpecification"],
+  "notes": "HTTP 404 page. Real, public, verbatim HTML whose template includes a live SpeakableSpecification microdata item (uses https://schema.org/). Included as a thin/edge-case sample and for SpeakableSpecification type coverage; provenance is intentionally an NPR error page, not a live article."
+}

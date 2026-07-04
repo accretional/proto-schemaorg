@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>011 itemref Cycle</title>
+</head>
+<body>
+  <div itemscope itemtype="https://schema.org/Organization" id="org">
+    <span itemprop="name">Example Org</span>
+    <div itemprop="member" itemscope itemtype="https://schema.org/Person" id="alice" itemref="ref-bob">
+      <span itemprop="name">Alice</span>
+    </div>
+  </div>
+
+  <div id="ref-bob">
+    <div itemprop="knows" itemscope itemtype="https://schema.org/Person" id="bob" itemref="alice">
+      <span itemprop="name">Bob</span>
+    </div>
+  </div>
+</body>
+</html>

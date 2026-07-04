@@ -1,0 +1,7 @@
+{
+  "url": "https://www.nps.gov/yell/index.htm",
+  "fetched": "2026-07-03",
+  "source_desc": "US National Park Service home page for Yellowstone National Park.",
+  "schema_types_seen": ["VideoObject"],
+  "notes": "A single live VideoObject item (the park hero/intro video) embedded in an otherwise JSON-LD-oriented government site. Uses the older http://schema.org/ form."
+}

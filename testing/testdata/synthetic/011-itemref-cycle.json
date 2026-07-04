@@ -1,0 +1,29 @@
+{
+  "_base": "https://example.com/",
+  "_desc": "itemref cycle / already-visited guard. Only #org is top-level (Alice and Bob have itemprop, so they are nested). Recursion memory = {org} -> {org,alice} -> {org,alice,bob}. Inside Bob's crawl, itemref='alice' reaches item #alice again (itemprop 'member'); since #alice is already in memory, its value becomes the string \"ERROR\" (JSON-level cycle guard, spec 6b step 7.2). Bob's properties are ordered by section-3 tree-order: element #alice (document order) precedes Bob's own name span, so 'member' is emitted before 'name'.",
+  "items": [
+    {
+      "type": ["https://schema.org/Organization"],
+      "properties": {
+        "name": ["Example Org"],
+        "member": [
+          {
+            "type": ["https://schema.org/Person"],
+            "properties": {
+              "name": ["Alice"],
+              "knows": [
+                {
+                  "type": ["https://schema.org/Person"],
+                  "properties": {
+                    "member": ["ERROR"],
+                    "name": ["Bob"]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
