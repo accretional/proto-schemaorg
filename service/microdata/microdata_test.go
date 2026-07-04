@@ -8,6 +8,8 @@ import (
 	"sort"
 	"strings"
 	"testing"
+
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 // TestSyntheticCorpus runs every hand-authored fixture in
@@ -80,4 +82,31 @@ func normalize(t *testing.T, doc *Document) any {
 		t.Fatal(err)
 	}
 	return v
+}
+
+// TestMessages proves microdata items now map to typed Schema<Type> proto
+// messages via the shared schemaorg.Build.
+func TestMessages(t *testing.T) {
+	page := `<!DOCTYPE html><html><head></head><body>` +
+		`<div itemscope itemtype="https://schema.org/Person">` +
+		`<span itemprop="name">Jane Doe</span>` +
+		`<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">` +
+		`<span itemprop="postalCode">12345</span></div></div></body></html>`
+	msgs, err := Messages([]byte(page), "https://example.com/")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(msgs) != 1 || msgs[0].Type != "Person" {
+		t.Fatalf("got %d msgs (want 1 Person): %+v", len(msgs), msgs)
+	}
+	b, err := protojson.Marshal(msgs[0].Message)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s := string(b)
+	for _, want := range []string{"Jane Doe", "12345"} {
+		if !strings.Contains(s, want) {
+			t.Errorf("typed message missing %q:\n%s", want, s)
+		}
+	}
 }

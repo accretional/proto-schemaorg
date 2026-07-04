@@ -21,18 +21,14 @@ import (
 
 	"github.com/accretional/proto-json/jsonparse"
 	jsonpb "github.com/accretional/proto-json/proto/gen"
-	"google.golang.org/protobuf/reflect/protoreflect"
-	"google.golang.org/protobuf/types/dynamicpb"
 
 	schemaorg "github.com/accretional/proto-schemaorg/proto"
 )
 
 // Item is one extracted top-level schema.org entity: its type local name and the
-// typed message (a *dynamicpb.Message over the Schema<Type> descriptor).
-type Item struct {
-	Type    string
-	Message protoreflect.ProtoMessage
-}
+// typed message. It is schemaorg.Typed (the shared result of the item→message
+// mapper both front-ends use).
+type Item = schemaorg.Typed
 
 // Extract parses a raw JSON-LD document (a single node, an array of nodes, or an
 // object with an @graph) and returns its top-level schema.org items. Untyped or
@@ -44,8 +40,8 @@ func Extract(src []byte) ([]Item, error) {
 	}
 	var items []Item
 	for _, obj := range topNodes(jt.GetValue()) {
-		if it, ok := buildItem(obj); ok {
-			items = append(items, it)
+		if t, ok := schemaorg.Build(toItem(obj)); ok {
+			items = append(items, t)
 		}
 	}
 	return items, nil
@@ -85,113 +81,37 @@ func objectsOf(v *jsonpb.Value) []*jsonpb.Object {
 	return nil
 }
 
-// buildItem builds a top-level Item from an object node, resolving its @type
-// against the modeled type system. Returns ok=false for untyped/unmodeled nodes.
-func buildItem(obj *jsonpb.Object) (Item, bool) {
-	for _, t := range typesOf(obj) {
-		md, err := schemaorg.MessageForType(t)
-		if err != nil || md == nil {
-			continue
-		}
-		msg := dynamicpb.NewMessage(md)
-		fillObject(msg, obj)
-		return Item{Type: t, Message: msg}, true
+// toItem converts a JSON-LD object node into the generic schemaorg.Item: @type
+// selects the type(s), @id the id, and each other key a property whose values
+// are scalars or nested typed items. schemaorg.Build then maps it to a message.
+func toItem(obj *jsonpb.Object) *schemaorg.Item {
+	it := &schemaorg.Item{Props: map[string][]schemaorg.Value{}}
+	it.Types = typeNames(member(obj, "@type"))
+	if id := member(obj, "@id"); id != nil {
+		it.ID = scalar(id)
 	}
-	return Item{}, false
-}
-
-// fillObject populates a Schema<Type> message from a JSON-LD object node.
-func fillObject(m protoreflect.Message, obj *jsonpb.Object) {
-	md := m.Descriptor()
 	for _, mem := range obj.GetSeq1().GetMember() {
 		key := jsonparse.StringValue(mem.GetString_())
-		val := mem.GetValue()
-		switch {
-		case key == "@id":
-			if f := schemaorg.FieldByName(md, "id"); f != nil {
-				m.Set(f, protoreflect.ValueOfString(scalar(val)))
-			}
-		case strings.HasPrefix(key, "@"): // @type, @context, @reverse, …
-			continue
-		default:
-			if f := schemaorg.FieldByName(md, key); f != nil {
-				setProperty(m, f, val)
-			}
-		}
-	}
-}
-
-// setProperty appends val (a scalar, a node, or an array of them) to the
-// repeated field f.
-func setProperty(m protoreflect.Message, f protoreflect.FieldDescriptor, val *jsonpb.Value) {
-	list := m.Mutable(f).List()
-	for _, e := range values(val) {
-		if f.Kind() == protoreflect.MessageKind {
-			fillWrapper(list.AppendMutable().Message(), e)
-		} else {
-			list.Append(protoreflect.ValueOfString(scalar(e)))
-		}
-	}
-}
-
-// fillWrapper fills a property-wrapper message (a oneof over the property's
-// ranges, plus sometimes a string text arm) from a single value e.
-func fillWrapper(w protoreflect.Message, e *jsonpb.Value) {
-	if obj := e.GetObject(); obj != nil {
-		if arm := messageArm(w.Descriptor(), typesOf(obj)); arm != nil {
-			fillObject(w.Mutable(arm).Message(), obj)
-			return
-		}
-	}
-	if arm := stringArm(w.Descriptor()); arm != nil {
-		w.Set(arm, protoreflect.ValueOfString(scalar(e)))
-	}
-}
-
-// messageArm returns the wrapper field whose message is Schema<one-of-types>,
-// or the wrapper's only message field when no type matches (the common
-// single-range case where @type is omitted or is a subtype).
-func messageArm(wmd protoreflect.MessageDescriptor, types []string) protoreflect.FieldDescriptor {
-	fs := wmd.Fields()
-	want := make(map[string]bool, len(types))
-	for _, t := range types {
-		want["schema"+norm(t)] = true
-	}
-	var onlyMsg protoreflect.FieldDescriptor
-	msgCount := 0
-	for i := 0; i < fs.Len(); i++ {
-		f := fs.Get(i)
-		if f.Kind() != protoreflect.MessageKind {
+		if strings.HasPrefix(key, "@") { // @type, @id, @context, @reverse, …
 			continue
 		}
-		msgCount++
-		onlyMsg = f
-		if want[norm(string(f.Message().Name()))] {
-			return f
+		for _, e := range values(mem.GetValue()) {
+			it.Props[key] = append(it.Props[key], toValue(e))
 		}
 	}
-	if len(want) == 0 && msgCount == 1 {
-		return onlyMsg
-	}
-	return nil
+	return it
 }
 
-func stringArm(wmd protoreflect.MessageDescriptor) protoreflect.FieldDescriptor {
-	fs := wmd.Fields()
-	for i := 0; i < fs.Len(); i++ {
-		if f := fs.Get(i); f.Kind() == protoreflect.StringKind {
-			return f
-		}
+// toValue maps a JSON-LD value to a generic Value: a nested typed node becomes a
+// nested item; everything else (scalars, @value / @id objects) becomes text.
+func toValue(v *jsonpb.Value) schemaorg.Value {
+	if obj := v.GetObject(); obj != nil && len(typeNames(member(obj, "@type"))) > 0 {
+		return schemaorg.Value{Item: toItem(obj)}
 	}
-	return nil
+	return schemaorg.Value{Text: scalar(v)}
 }
 
 // ── AST helpers ─────────────────────────────────────────────────────────────
-
-// typesOf returns the schema.org local type names of an object node's @type.
-func typesOf(obj *jsonpb.Object) []string {
-	return typeNames(member(obj, "@type"))
-}
 
 func typeNames(v *jsonpb.Value) []string {
 	if v == nil {
@@ -262,17 +182,4 @@ func localName(id string) string {
 		return id[i+1:]
 	}
 	return id
-}
-
-func norm(s string) string {
-	var b strings.Builder
-	for _, r := range s {
-		switch {
-		case r >= 'a' && r <= 'z', r >= '0' && r <= '9':
-			b.WriteRune(r)
-		case r >= 'A' && r <= 'Z':
-			b.WriteRune(r + ('a' - 'A'))
-		}
-	}
-	return b.String()
 }
