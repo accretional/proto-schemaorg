@@ -14,6 +14,7 @@ replace github.com/accretional/merge => ../proto-merge
 require (
 	github.com/accretional/gluon v0.0.0
 	github.com/accretional/merge v0.0.0-00010101000000-000000000000
+	github.com/accretional/proto-html v0.0.0-00010101000000-000000000000
 	google.golang.org/protobuf v1.36.11
 )
 
@@ -32,3 +33,5 @@ require (
 )
 
 replace github.com/accretional/proto-json => ../proto-json
+
+replace github.com/accretional/proto-html => ../proto-html

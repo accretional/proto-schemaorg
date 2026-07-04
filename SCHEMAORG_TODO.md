@@ -21,14 +21,13 @@ mirrored as a GitHub issue.
 
 ### Parsing (through the grammar repos — never byte-level here)
 
-- [ ] **proto-html parser library.** proto-html has the HTML grammar + generated
-  proto but no importable runtime parser (only chrome-testing). Add one (a PR to
-  proto-html), the same move as proto-json's `jsonparse` and gluon's
-  `RenderEBNF`. Prerequisite for everything HTML below. **Do not use
-  `golang.org/x/net/html`.**
-- [ ] **HTML → JSON-LD plumbing.** Once proto-html parses: walk its AST to pull
-  `<script type="application/ld+json">` blocks and feed them to
-  `jsonld.Extract`.
+- [x] **proto-html parser library** (proto-html PR #2). Gluon-based HTML parser
+  (`htmlparse.ParseDOM`) with a lexical token-matcher layer + inter-element
+  whitespace tolerance, projecting to a generic DOM. Not `x/net/html`.
+- [x] **HTML → JSON-LD plumbing** (`jsonld.ExtractHTML`). Parses a page via
+  proto-html, walks the DOM for `<script type="application/ld+json">` blocks, and
+  feeds each to `jsonld.Extract`. (Depended on proto-json #1 / proto-html #3, both
+  fixed.)
 - [ ] **Microdata extractor** (`service/microdata`). The WHATWG DOM-walk
   algorithm (`docs/MICRODATA_SPEC.md`) over proto-html's AST → the same
   `Schema<Type>` messages. Gate against `testing/testdata/synthetic/` (the
