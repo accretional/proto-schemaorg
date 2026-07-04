@@ -38,14 +38,15 @@ everything else from it.**
 
 3. **lang/schemaorg.ebnf** is a generated, human-readable *projection* of the
    same AST, with the subClassOf hierarchy annotated. It makes the grammar (and
-   its entity links) legible and composable; it is not re-parsed. Its EBNF
-   punctuation is read from gluon's canonical `LexDescriptor`
-   (`metaparser.EBNFLexV2`), not hardcoded. This projection is **interim**: gluon
-   has no descriptor→EBNF serializer (the pipeline is one-way,
-   EBNF→GrammarDescriptor→AST→proto), so we filed
-   [accretional/gluon#10](https://github.com/accretional/gluon/issues/10) to add
-   a `LexDescriptor`-driven `RenderEBNF`; once it lands, `emitEBNF` collapses to a
-   call into gluon and the hand-rolled walk goes away.
+   its entity links) legible and composable; it is not re-parsed. It is rendered
+   by **gluon's own `metaparser.RenderEBNF`** — a `LexDescriptor`-driven
+   AST→EBNF serializer (the inverse of `ParseEBNF`) that we added to gluon
+   ([issue #10](https://github.com/accretional/gluon/issues/10),
+   [PR #11](https://github.com/accretional/gluon/pull/11)) precisely so downstream
+   tools stop hand-rolling EBNF printers with hardcoded glyphs. genast passes its
+   subClassOf note through `RenderEBNF`'s `annotate` hook; it does no string
+   manipulation of the grammar itself. (The original one-way limitation — gluon
+   only went EBNF→GrammarDescriptor→AST→proto — is now resolved.)
 
 ## What is context-free grammar vs. overlay
 
