@@ -35,11 +35,12 @@ mirrored as a GitHub issue.
   itemprop/itemtype, and URL resolution. Gated against
   `testing/testdata/synthetic/` — **13/14 pass**; `013` is skipped pending
   proto-html#6 (bare `<meta itemprop>` parse gap), not an extraction bug.
-- [ ] **Unify the item→message mapping.** Both JSON-LD and microdata now yield
-  the same syntax-independent item shape (type/id/properties). Factor the
-  generic-item → `Schema<Type>` dynamicpb mapper out of `jsonld` into `schemaorg`
-  and have `microdata` produce typed messages too (currently it stops at the
-  generic form the corpus validates).
+- [x] **Unified item→message mapping.** `schemaorg.Item`/`Value` is the one
+  syntax-independent shape both front-ends produce, and `schemaorg.Build` is the
+  single mapper to `Schema<Type>` messages (property wrappers, oneof arms,
+  datatype vs item fields). `jsonld` builds an `Item` from the JSON AST then
+  `Build`s it; `microdata.Messages` does the same over its DOM extraction. No
+  duplicated mapping logic.
 
 ### Type system / grammar
 

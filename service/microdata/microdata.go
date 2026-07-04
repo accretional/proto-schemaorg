@@ -13,19 +13,30 @@ import (
 
 	"github.com/accretional/proto-html/dom"
 	"github.com/accretional/proto-html/htmlparse"
+	schemaorg "github.com/accretional/proto-schemaorg/proto"
 )
 
-// Item is one extracted microdata item in the WHATWG JSON shape. A property
-// value (in Properties) is either a string or a nested *Item.
-type Item struct {
-	Type       []string         `json:"type,omitempty"`
-	ID         string           `json:"id,omitempty"`
-	Properties map[string][]any `json:"properties"`
+// Document is the top-level extraction result: the syntax-independent items
+// (schemaorg.Item), which marshal to the WHATWG JSON form and map to typed
+// proto messages via schemaorg.Build (see Messages).
+type Document struct {
+	Items []*schemaorg.Item `json:"items"`
 }
 
-// Document is the top-level extraction result.
-type Document struct {
-	Items []*Item `json:"items"`
+// Messages runs Extract and maps every item to its typed Schema<Type> proto
+// message (skipping unmodeled types).
+func Messages(htmlSrc []byte, baseURL string) ([]schemaorg.Typed, error) {
+	doc, err := Extract(htmlSrc, baseURL)
+	if err != nil {
+		return nil, err
+	}
+	var out []schemaorg.Typed
+	for _, it := range doc.Items {
+		if t, ok := schemaorg.Build(it); ok {
+			out = append(out, t)
+		}
+	}
+	return out, nil
 }
 
 // Extract parses HTML via proto-html and runs the microdata extraction. baseURL
@@ -59,7 +70,7 @@ func Extract(htmlSrc []byte, baseURL string) (*Document, error) {
 		}
 	})
 
-	var items []*Item
+	var items []*schemaorg.Item
 	root.Walk(func(n *dom.Node) {
 		if isItem(n) && !hasAttr(n, "itemprop") { // top-level items: itemscope, no itemprop
 			items = append(items, x.object(n, nil))
@@ -76,12 +87,12 @@ type extractor struct {
 
 // object builds the item rooted at item; memory is the chain of itemscope
 // ancestors (for the cycle guard).
-func (x *extractor) object(item *dom.Node, memory []*dom.Node) *Item {
-	it := &Item{Properties: map[string][]any{}}
+func (x *extractor) object(item *dom.Node, memory []*dom.Node) *schemaorg.Item {
+	it := &schemaorg.Item{Props: map[string][]schemaorg.Value{}}
 	if v, ok := item.AttrVal("itemtype"); ok {
-		it.Type = tokens(v)
+		it.Types = tokens(v)
 	}
-	if v, ok := item.AttrVal("itemid"); ok && len(it.Type) > 0 {
+	if v, ok := item.AttrVal("itemid"); ok && len(it.Types) > 0 {
 		it.ID = x.resolve(v)
 	}
 	mem := append(append([]*dom.Node{}, memory...), item)
@@ -89,17 +100,16 @@ func (x *extractor) object(item *dom.Node, memory []*dom.Node) *Item {
 	for _, p := range x.properties(item) {
 		v, _ := p.AttrVal("itemprop")
 		for _, name := range tokens(v) {
-			var val any
-			if hasAttr(p, "itemscope") {
-				if contains(mem, p) {
-					val = "ERROR" // cycle guard (WHATWG)
-				} else {
-					val = x.object(p, mem)
-				}
-			} else {
-				val = x.propertyValue(p)
+			var val schemaorg.Value
+			switch {
+			case hasAttr(p, "itemscope") && contains(mem, p):
+				val = schemaorg.Value{Text: "ERROR"} // cycle guard (WHATWG)
+			case hasAttr(p, "itemscope"):
+				val = schemaorg.Value{Item: x.object(p, mem)}
+			default:
+				val = schemaorg.Value{Text: x.propertyValue(p)}
 			}
-			it.Properties[name] = append(it.Properties[name], val)
+			it.Props[name] = append(it.Props[name], val)
 		}
 	}
 	return it

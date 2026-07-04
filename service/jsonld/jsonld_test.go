@@ -1,6 +1,7 @@
 package jsonld
 
 import (
+	"strings"
 	"testing"
 
 	"google.golang.org/protobuf/reflect/protoreflect"
@@ -76,6 +77,20 @@ func fieldByName(t *testing.T, m protoreflect.Message, name string) protoreflect
 		}
 	}
 	return nil
+}
+
+// norm lowercases and drops non-alphanumerics (test-local helper).
+func norm(s string) string {
+	var b strings.Builder
+	for _, r := range s {
+		switch {
+		case r >= 'a' && r <= 'z', r >= '0' && r <= '9':
+			b.WriteRune(r)
+		case r >= 'A' && r <= 'Z':
+			b.WriteRune(r + ('a' - 'A'))
+		}
+	}
+	return b.String()
 }
 
 func TestExtractJSONPersonWithNestedAddress(t *testing.T) {
