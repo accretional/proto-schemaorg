@@ -28,10 +28,18 @@ mirrored as a GitHub issue.
   proto-html, walks the DOM for `<script type="application/ld+json">` blocks, and
   feeds each to `jsonld.Extract`. (Depended on proto-json #1 / proto-html #3, both
   fixed.)
-- [ ] **Microdata extractor** (`service/microdata`). The WHATWG DOM-walk
-  algorithm (`docs/MICRODATA_SPEC.md`) over proto-html's AST → the same
-  `Schema<Type>` messages. Gate against `testing/testdata/synthetic/` (the
-  hand-authored ground truth); report over `testing/testdata/live/`.
+- [x] **Microdata extractor** (`service/microdata`). The WHATWG DOM-walk
+  algorithm (`docs/MICRODATA_SPEC.md`) over proto-html's DOM → the WHATWG
+  structured form (items of {type, id, properties}; value = string | nested
+  item), with itemref, cycle guards, the value cascade, multi-token
+  itemprop/itemtype, and URL resolution. Gated against
+  `testing/testdata/synthetic/` — **13/14 pass**; `013` is skipped pending
+  proto-html#6 (bare `<meta itemprop>` parse gap), not an extraction bug.
+- [ ] **Unify the item→message mapping.** Both JSON-LD and microdata now yield
+  the same syntax-independent item shape (type/id/properties). Factor the
+  generic-item → `Schema<Type>` dynamicpb mapper out of `jsonld` into `schemaorg`
+  and have `microdata` produce typed messages too (currently it stops at the
+  generic form the corpus validates).
 
 ### Type system / grammar
 
