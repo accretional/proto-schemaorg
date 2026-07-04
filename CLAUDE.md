@@ -93,14 +93,20 @@ generic `SchemaThing`, so the message graph is always closed.
 ## Front-ends (planned, `service/`)
 
 Both consume the one generated type system (via `dynamicpb` against
-`proto/schemaorg.fdset`, or generated Go bindings) and differ only in parsing:
+`proto/schemaorg.fdset`) and differ only in parsing. **Parsing goes through the
+ecosystem's grammar repos — never hand-rolled byte-level parsing here** (no
+`encoding/json`, no `x/net/html`).
 
-- **JSON-LD** (build first): parse `<script type="application/ld+json">` blocks →
-  resolve `@context`/`@type`/`@id` → fill `Schema<T>` messages. This is where
-  real-world schema.org data lives.
-- **Microdata:** the WHATWG DOM-walk algorithm over an HTML parse
-  (`golang.org/x/net/html`) → the same messages. Spec digest in
-  `docs/MICRODATA_SPEC.md`.
+- **JSON-LD** (`service/jsonld`, built): `jsonld.Extract(src)` parses raw JSON-LD
+  via **accretional/proto-json** (`jsonparse.Parse` → the `json.proto` AST),
+  walks that AST, and fills `Schema<T>` messages — a node's `@type` selects the
+  message, `@id` fills `id`, each other key is a property (scalar → datatype
+  field; nested node → property-wrapper message). This is where real-world
+  schema.org data lives.
+- **HTML plumbing (pending):** pulling `<script type="application/ld+json">`
+  blocks out of a page, and the Microdata DOM-walk (`docs/MICRODATA_SPEC.md`),
+  belong to the HTML grammar (**accretional/proto-html**) — a proto-html parser
+  library is the prerequisite, not `x/net/html`.
 
 ## Testing
 

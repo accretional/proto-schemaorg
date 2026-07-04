@@ -12,8 +12,10 @@ export PATH="$PATH:$(go env GOPATH 2>/dev/null || echo "$HOME/go")/bin"
 
 command -v go >/dev/null || { echo "[setup] FATAL: install Go (https://go.dev/dl/) and re-run"; exit 1; }
 
-# Sibling dependency repos (go.mod replaces => ../<dep>).
-for dep in gluon proto-merge; do
+# Sibling dependency repos (go.mod replaces => ../<dep>). proto-json parses
+# JSON-LD into the json.proto AST; gluon compiles the grammar; proto-merge
+# pretty-prints descriptors.
+for dep in gluon proto-merge proto-json; do
   if [ ! -d "../$dep/.git" ]; then
     echo "[setup] cloning $dep -> ../$dep"
     git clone --depth 1 "https://github.com/accretional/$dep" "../$dep"
