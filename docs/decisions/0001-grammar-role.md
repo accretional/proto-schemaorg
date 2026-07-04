@@ -38,7 +38,14 @@ everything else from it.**
 
 3. **lang/schemaorg.ebnf** is a generated, human-readable *projection* of the
    same AST, with the subClassOf hierarchy annotated. It makes the grammar (and
-   its entity links) legible and composable; it is not re-parsed.
+   its entity links) legible and composable; it is not re-parsed. Its EBNF
+   punctuation is read from gluon's canonical `LexDescriptor`
+   (`metaparser.EBNFLexV2`), not hardcoded. This projection is **interim**: gluon
+   has no descriptor→EBNF serializer (the pipeline is one-way,
+   EBNF→GrammarDescriptor→AST→proto), so we filed
+   [accretional/gluon#10](https://github.com/accretional/gluon/issues/10) to add
+   a `LexDescriptor`-driven `RenderEBNF`; once it lands, `emitEBNF` collapses to a
+   call into gluon and the hand-rolled walk goes away.
 
 ## What is context-free grammar vs. overlay
 
