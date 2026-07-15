@@ -43,12 +43,6 @@ func TestSyntheticCorpus(t *testing.T) {
 
 			doc, err := Extract(htmlSrc, base)
 			if err != nil {
-				// A proto-html parse gap (not an extraction bug) — skip, don't
-				// fail, so this gates extraction correctness. See proto-html#6
-				// (bare <meta itemprop> in some body contexts).
-				if strings.Contains(err.Error(), "did not match") {
-					t.Skipf("proto-html cannot parse this fixture yet (proto-html#6): %v", err)
-				}
 				t.Fatalf("extract: %v", err)
 			}
 

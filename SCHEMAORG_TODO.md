@@ -33,8 +33,8 @@ mirrored as a GitHub issue.
   structured form (items of {type, id, properties}; value = string | nested
   item), with itemref, cycle guards, the value cascade, multi-token
   itemprop/itemtype, and URL resolution. Gated against
-  `testing/testdata/synthetic/` — **13/14 pass**; `013` is skipped pending
-  proto-html#6 (bare `<meta itemprop>` parse gap), not an extraction bug.
+  `testing/testdata/synthetic/` — **14/14 pass** (proto-html#6, the `013` parse
+  gap, is fixed on proto-html main).
 - [x] **Unified item→message mapping.** `schemaorg.Item`/`Value` is the one
   syntax-independent shape both front-ends produce, and `schemaorg.Build` is the
   single mapper to `Schema<Type>` messages (property wrappers, oneof arms,
