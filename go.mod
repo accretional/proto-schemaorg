@@ -18,7 +18,10 @@ require (
 	google.golang.org/protobuf v1.36.11
 )
 
-require golang.org/x/net v0.52.0 // indirect
+require (
+	go.starlark.net v0.0.0-20260522144826-ec58d4b459e2 // indirect
+	golang.org/x/net v0.52.0 // indirect
+)
 
 require (
 	github.com/accretional/proto-expr v0.0.0-20260416071217-9a69001c59bb // indirect
