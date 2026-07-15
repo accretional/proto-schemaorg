@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "https://acme.example/#org",
+      "props": {
+        "email": [
+          "info@acme.example"
+        ],
+        "founding_date": [
+          "1985-04-01"
+        ],
+        "legal_name": [
+          "Acme Corporation Inc."
+        ],
+        "name": [
+          "Acme Corp"
+        ],
+        "telephone": [
+          "+1-555-0199"
+        ],
+        "url": [
+          "https://acme.example"
+        ]
+      },
+      "type": "Organization"
+    }
+  ],
+  "note": "Organization: scalars + @id"
+}

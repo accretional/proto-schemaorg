@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MonetaryAmount",
+  "currency": "USD",
+  "maxValue": 5000,
+  "minValue": 1000
+}

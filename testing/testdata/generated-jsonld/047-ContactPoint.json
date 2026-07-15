@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  "contactType": "sales",
+  "email": "sales@acme.example",
+  "telephone": "+1-555-0100"
+}

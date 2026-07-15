@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Jane Doe"
+        ],
+        "works_for": [
+          {
+            "props": {
+              "address": [
+                {
+                  "props": {
+                    "postal_code": [
+                      "99999"
+                    ],
+                    "street_address": [
+                      "1 Industrial Way"
+                    ]
+                  },
+                  "type": "PostalAddress"
+                }
+              ],
+              "name": [
+                "Acme Corp"
+              ]
+            },
+            "type": "Organization"
+          }
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: three-level nesting (Person \u003e Organization \u003e PostalAddress)"
+}

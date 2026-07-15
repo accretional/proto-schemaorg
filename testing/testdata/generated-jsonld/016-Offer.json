@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "itemOffered": {
+    "@type": "Product",
+    "name": "Super Widget",
+    "sku": "SW-001"
+  },
+  "price": 19.99,
+  "priceCurrency": "USD"
+}

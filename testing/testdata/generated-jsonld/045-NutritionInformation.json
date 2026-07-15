@@ -1,0 +1,8 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NutritionInformation",
+  "calories": "250 calories",
+  "fatContent": "8 g",
+  "proteinContent": "12 g",
+  "servingSize": "1 cup"
+}

@@ -1,0 +1,8 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://cdn.example/p.jpg",
+  "encodingFormat": "image/jpeg",
+  "name": "Product photo",
+  "uploadDate": "2026-02-02"
+}

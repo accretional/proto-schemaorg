@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Springfield",
+    "postalCode": "12345",
+    "streetAddress": "123 Main St"
+  },
+  "name": "Jane Doe"
+}

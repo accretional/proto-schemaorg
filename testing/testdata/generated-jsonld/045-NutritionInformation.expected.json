@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "props": {
+        "calories": [
+          "250 calories"
+        ],
+        "fat_content": [
+          "8 g"
+        ],
+        "protein_content": [
+          "12 g"
+        ],
+        "serving_size": [
+          "1 cup"
+        ]
+      },
+      "type": "NutritionInformation"
+    }
+  ],
+  "note": "NutritionInformation: measurement scalars"
+}

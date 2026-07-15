@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "props": {
+        "is_family_friendly": [
+          "true"
+        ],
+        "name": [
+          "Kids Widget"
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: boolean scalar"
+}

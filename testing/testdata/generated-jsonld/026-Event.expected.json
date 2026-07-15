@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "location": [
+          {
+            "props": {
+              "name": [
+                "Convention Center"
+              ],
+              "telephone": [
+                "+1-555-0122"
+              ]
+            },
+            "type": "Place"
+          }
+        ],
+        "name": [
+          "Widget Expo"
+        ]
+      },
+      "type": "Event"
+    }
+  ],
+  "note": "Event: nested Place via location"
+}

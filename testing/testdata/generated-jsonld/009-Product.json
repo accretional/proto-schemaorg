@@ -1,0 +1,6 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "isFamilyFriendly": true,
+  "name": "Kids Widget"
+}

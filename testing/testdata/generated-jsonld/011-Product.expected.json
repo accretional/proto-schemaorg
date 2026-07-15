@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "props": {
+        "aggregate_rating": [
+          {
+            "props": {
+              "best_rating": [
+                "5"
+              ],
+              "rating_value": [
+                "4.5"
+              ],
+              "review_count": [
+                "100"
+              ]
+            },
+            "type": "AggregateRating"
+          }
+        ],
+        "name": [
+          "Super Widget"
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: nested AggregateRating (numeric fields)"
+}

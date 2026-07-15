@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@id": "https://example.com/jane#me",
+  "@type": "Person",
+  "email": "jane@example.com",
+  "familyName": "Doe",
+  "givenName": "Jane",
+  "name": "Jane Doe",
+  "telephone": "+1-555-0100",
+  "url": "https://example.com/jane"
+}

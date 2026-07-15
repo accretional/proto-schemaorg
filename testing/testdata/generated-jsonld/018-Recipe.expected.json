@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Chocolate Cake"
+        ],
+        "nutrition": [
+          {
+            "props": {
+              "calories": [
+                "350 calories"
+              ],
+              "fat_content": [
+                "12 g"
+              ]
+            },
+            "type": "NutritionInformation"
+          }
+        ]
+      },
+      "type": "Recipe"
+    }
+  ],
+  "note": "Recipe: nested NutritionInformation"
+}

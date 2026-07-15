@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Acme Corp",
+      "url": "https://acme.example"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Acme Site",
+      "url": "https://acme.example"
+    }
+  ]
+}

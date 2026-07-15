@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "issn": [
+          "1234-5678"
+        ],
+        "name": [
+          "Acme Site"
+        ],
+        "url": [
+          "https://acme.example"
+        ]
+      },
+      "type": "WebSite"
+    }
+  ],
+  "note": "WebSite: simple scalars"
+}

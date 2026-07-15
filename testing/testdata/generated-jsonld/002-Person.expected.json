@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "props": {
+        "job_title": [
+          "Software Engineer"
+        ],
+        "name": [
+          "Jane Doe"
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: bare string into a wrapper's text arm (jobTitle range DefinedTerm|Text)"
+}

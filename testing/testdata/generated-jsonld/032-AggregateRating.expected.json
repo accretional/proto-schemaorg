@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "props": {
+        "item_reviewed": [
+          {
+            "props": {
+              "name": [
+                "Super Widget"
+              ]
+            },
+            "type": "Thing"
+          }
+        ],
+        "rating_value": [
+          "4.5"
+        ]
+      },
+      "type": "AggregateRating"
+    }
+  ],
+  "note": "AggregateRating: nested Thing via itemReviewed"
+}

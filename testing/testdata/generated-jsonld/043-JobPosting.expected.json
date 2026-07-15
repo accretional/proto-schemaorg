@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "props": {
+        "date_posted": [
+          "2026-06-01"
+        ],
+        "employment_type": [
+          "FULL_TIME"
+        ],
+        "salary_currency": [
+          "USD"
+        ],
+        "title": [
+          "Widget Engineer"
+        ],
+        "valid_through": [
+          "2026-08-01"
+        ]
+      },
+      "type": "JobPosting"
+    }
+  ],
+  "note": "JobPosting: employment scalars"
+}

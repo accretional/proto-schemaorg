@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "props": {
+        "address_locality": [
+          "Springfield"
+        ],
+        "name": [
+          "HQ"
+        ],
+        "postal_code": [
+          "12345"
+        ],
+        "street_address": [
+          "123 Main St"
+        ],
+        "telephone": [
+          "+1-555-0100"
+        ]
+      },
+      "type": "PostalAddress"
+    }
+  ],
+  "note": "PostalAddress: scalars"
+}

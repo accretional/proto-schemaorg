@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "props": {
+        "cook_time": [
+          "PT45M"
+        ],
+        "name": [
+          "Chocolate Cake"
+        ],
+        "prep_time": [
+          "PT20M"
+        ],
+        "recipe_category": [
+          "Dessert"
+        ],
+        "recipe_cuisine": [
+          "French"
+        ],
+        "total_time": [
+          "PT65M"
+        ],
+        "url": [
+          "https://example.com/cake"
+        ]
+      },
+      "type": "Recipe"
+    }
+  ],
+  "note": "Recipe: ISO-8601 duration + text scalars"
+}

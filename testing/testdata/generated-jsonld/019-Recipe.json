@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "author": {
+    "@type": "Person",
+    "name": "Chef Pierre"
+  },
+  "name": "Chocolate Cake"
+}

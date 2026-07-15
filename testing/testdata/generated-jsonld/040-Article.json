@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "articleBody": "Widgets are ...",
+  "author": {
+    "@type": "Person",
+    "name": "Staff Writer"
+  },
+  "datePublished": "2026-03-15",
+  "headline": "Everything about widgets",
+  "name": "Widgets Explained",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Widget Times"
+  }
+}

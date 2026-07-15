@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "props": {
+        "address": [
+          {
+            "props": {
+              "address_locality": [
+                "Springfield"
+              ],
+              "postal_code": [
+                "12345"
+              ],
+              "street_address": [
+                "123 Main St"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "name": [
+          "Jane Doe"
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: nested PostalAddress"
+}

@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Acme"
+        ],
+        "slogan": [
+          "Widgets that work"
+        ],
+        "url": [
+          "https://acme.example"
+        ]
+      },
+      "type": "Brand"
+    }
+  ],
+  "note": "Brand: simple scalars"
+}

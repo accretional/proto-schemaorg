@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "aggregate_rating": [
+          {
+            "props": {
+              "rating_value": [
+                "4.8"
+              ],
+              "review_count": [
+                "52"
+              ]
+            },
+            "type": "AggregateRating"
+          }
+        ],
+        "name": [
+          "Chocolate Cake"
+        ]
+      },
+      "type": "Recipe"
+    }
+  ],
+  "note": "Recipe: nested AggregateRating"
+}

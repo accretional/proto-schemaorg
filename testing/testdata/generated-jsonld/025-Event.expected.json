@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "id": "https://example.com/event/1",
+      "props": {
+        "end_date": [
+          "2026-09-03T17:00"
+        ],
+        "name": [
+          "Widget Expo"
+        ],
+        "start_date": [
+          "2026-09-01T09:00"
+        ],
+        "url": [
+          "https://example.com/event/1"
+        ]
+      },
+      "type": "Event"
+    }
+  ],
+  "note": "Event: date scalars + @id"
+}

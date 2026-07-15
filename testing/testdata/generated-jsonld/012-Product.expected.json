@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "brand": [
+          {
+            "props": {
+              "name": [
+                "Acme"
+              ],
+              "slogan": [
+                "We make widgets"
+              ]
+            },
+            "type": "Brand"
+          }
+        ],
+        "name": [
+          "Super Widget"
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: nested Brand (arm chosen among Brand|Organization)"
+}

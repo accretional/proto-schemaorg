@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "props": {
+        "best_rating": [
+          "5"
+        ],
+        "rating_count": [
+          "120"
+        ],
+        "rating_value": [
+          "4.5"
+        ],
+        "review_count": [
+          "100"
+        ],
+        "worst_rating": [
+          "1"
+        ]
+      },
+      "type": "AggregateRating"
+    }
+  ],
+  "note": "AggregateRating: numeric scalars"
+}

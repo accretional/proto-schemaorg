@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "datePosted": "2026-06-01",
+  "employmentType": "FULL_TIME",
+  "salaryCurrency": "USD",
+  "title": "Widget Engineer",
+  "validThrough": "2026-08-01"
+}

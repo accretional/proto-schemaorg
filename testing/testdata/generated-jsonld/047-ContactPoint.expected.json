@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "contact_type": [
+          "sales"
+        ],
+        "email": [
+          "sales@acme.example"
+        ],
+        "telephone": [
+          "+1-555-0100"
+        ]
+      },
+      "type": "ContactPoint"
+    }
+  ],
+  "note": "ContactPoint: contact scalars"
+}

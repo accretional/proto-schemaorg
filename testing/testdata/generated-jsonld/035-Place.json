@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "10022",
+    "streetAddress": "59th to 110th St"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7829,
+    "longitude": -73.9654
+  },
+  "name": "Central Park"
+}

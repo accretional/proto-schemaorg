@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "props": {
+        "accepts_reservations": [
+          "true"
+        ],
+        "address": [
+          {
+            "props": {
+              "postal_code": [
+                "75001"
+              ],
+              "street_address": [
+                "42 Rue de Widget"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "name": [
+          "Bistro Widget"
+        ],
+        "price_range": [
+          "$$$"
+        ],
+        "serves_cuisine": [
+          "French"
+        ],
+        "telephone": [
+          "+1-555-0144"
+        ]
+      },
+      "type": "Restaurant"
+    }
+  ],
+  "note": "Restaurant: cuisine + boolean + nested address"
+}

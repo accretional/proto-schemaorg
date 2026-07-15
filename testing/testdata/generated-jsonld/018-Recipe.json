@@ -1,0 +1,10 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Chocolate Cake",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "350 calories",
+    "fatContent": "12 g"
+  }
+}

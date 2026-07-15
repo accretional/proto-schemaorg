@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "60601",
+    "streetAddress": "7 Market St"
+  },
+  "name": "Joe's Hardware",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
+  "telephone": "+1-555-0133"
+}

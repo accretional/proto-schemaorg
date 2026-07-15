@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@id": "https://acme.example/#org",
+  "@type": "Organization",
+  "email": "info@acme.example",
+  "foundingDate": "1985-04-01",
+  "legalName": "Acme Corporation Inc.",
+  "name": "Acme Corp",
+  "telephone": "+1-555-0199",
+  "url": "https://acme.example"
+}

@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "id": "https://example.com/offer/1",
+      "props": {
+        "availability_starts": [
+          "2026-01-01"
+        ],
+        "price": [
+          "19.99"
+        ],
+        "price_currency": [
+          "USD"
+        ],
+        "sku": [
+          "SW-001"
+        ],
+        "url": [
+          "https://example.com/offer/1"
+        ]
+      },
+      "type": "Offer"
+    }
+  ],
+  "note": "Offer: scalars + @id"
+}

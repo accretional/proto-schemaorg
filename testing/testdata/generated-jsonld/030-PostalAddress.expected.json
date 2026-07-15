@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "props": {
+        "address_country": [
+          {
+            "props": {
+              "name": [
+                "US"
+              ]
+            },
+            "type": "Country"
+          }
+        ],
+        "street_address": [
+          "123 Main St"
+        ]
+      },
+      "type": "PostalAddress"
+    }
+  ],
+  "note": "PostalAddress: nested Country via addressCountry"
+}

@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "props": {
+        "address": [
+          {
+            "props": {
+              "postal_code": [
+                "60601"
+              ],
+              "street_address": [
+                "7 Market St"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "name": [
+          "Joe's Hardware"
+        ],
+        "opening_hours": [
+          "Mo-Fr 09:00-17:00"
+        ],
+        "price_range": [
+          "$$"
+        ],
+        "telephone": [
+          "+1-555-0133"
+        ]
+      },
+      "type": "LocalBusiness"
+    }
+  ],
+  "note": "LocalBusiness: business scalars + nested address"
+}

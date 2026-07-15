@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Hybrid Entity"
+        ],
+        "url": [
+          "https://hybrid.example"
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: multi-type @type array (first modeled wins)"
+}
