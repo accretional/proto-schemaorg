@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "props": {
+        "author": [
+          {
+            "props": {
+              "name": [
+                "Jane Author"
+              ]
+            },
+            "type": "Person"
+          }
+        ],
+        "book_edition": [
+          "2nd"
+        ],
+        "date_published": [
+          "2020-01-01"
+        ],
+        "isbn": [
+          "978-3-16-148410-0"
+        ],
+        "name": [
+          "Widgets: A History"
+        ],
+        "number_of_pages": [
+          "320"
+        ]
+      },
+      "type": "Book"
+    }
+  ],
+  "note": "Book: identifiers + nested author"
+}

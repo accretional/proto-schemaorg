@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "issn": "1234-5678",
+  "name": "Acme Site",
+  "url": "https://acme.example"
+}

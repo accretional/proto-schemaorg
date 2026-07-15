@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "props": {
+        "author": [
+          {
+            "props": {
+              "name": [
+                "A. Reviewer"
+              ]
+            },
+            "type": "Person"
+          }
+        ],
+        "date_published": [
+          "2026-05-01"
+        ],
+        "name": [
+          "My review"
+        ],
+        "review_body": [
+          "Solid product."
+        ],
+        "review_rating": [
+          {
+            "props": {
+              "best_rating": [
+                "5"
+              ],
+              "rating_value": [
+                "4"
+              ]
+            },
+            "type": "Rating"
+          }
+        ]
+      },
+      "type": "Review"
+    }
+  ],
+  "note": "Review: text scalars + nested author and reviewRating"
+}

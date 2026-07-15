@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Metropolis",
+    "postalCode": "54321",
+    "streetAddress": "500 Corporate Blvd"
+  },
+  "name": "Acme Corp"
+}

@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "location": [
+          {
+            "props": {
+              "postal_code": [
+                "10001"
+              ],
+              "street_address": [
+                "1 Expo Way"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "name": [
+          "Widget Expo"
+        ]
+      },
+      "type": "Event"
+    }
+  ],
+  "note": "Event: nested PostalAddress via location (multi-arm choice by @type)"
+}

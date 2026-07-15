@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Rating",
+  "bestRating": 5,
+  "ratingValue": 3,
+  "worstRating": 1
+}

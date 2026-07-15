@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "props": {
+        "contact_point": [
+          {
+            "props": {
+              "contact_type": [
+                "customer service"
+              ],
+              "email": [
+                "support@acme.example"
+              ],
+              "telephone": [
+                "+1-555-0111"
+              ]
+            },
+            "type": "ContactPoint"
+          }
+        ],
+        "name": [
+          "Acme Corp"
+        ]
+      },
+      "type": "Organization"
+    }
+  ],
+  "note": "Organization: nested ContactPoint"
+}

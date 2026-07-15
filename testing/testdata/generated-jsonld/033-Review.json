@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "author": {
+    "@type": "Person",
+    "name": "A. Reviewer"
+  },
+  "datePublished": "2026-05-01",
+  "name": "My review",
+  "reviewBody": "Solid product.",
+  "reviewRating": {
+    "@type": "Rating",
+    "bestRating": 5,
+    "ratingValue": 4
+  }
+}

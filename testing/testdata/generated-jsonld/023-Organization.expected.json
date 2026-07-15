@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "logo": [
+          {
+            "props": {
+              "content_url": [
+                "https://acme.example/logo.png"
+              ],
+              "name": [
+                "Acme logo"
+              ]
+            },
+            "type": "ImageObject"
+          }
+        ],
+        "name": [
+          "Acme Corp"
+        ]
+      },
+      "type": "Organization"
+    }
+  ],
+  "note": "Organization: nested ImageObject via logo"
+}

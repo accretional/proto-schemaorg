@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "support@acme.example",
+    "telephone": "+1-555-0111"
+  },
+  "name": "Acme Corp"
+}

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Widget Expo"
+        ],
+        "offers": [
+          {
+            "props": {
+              "price": [
+                "25.00"
+              ],
+              "price_currency": [
+                "USD"
+              ]
+            },
+            "type": "Offer"
+          }
+        ],
+        "performer": [
+          {
+            "props": {
+              "name": [
+                "The Widget Band"
+              ]
+            },
+            "type": "Person"
+          }
+        ]
+      },
+      "type": "Event"
+    }
+  ],
+  "note": "Event: two nested items (offers + performer)"
+}

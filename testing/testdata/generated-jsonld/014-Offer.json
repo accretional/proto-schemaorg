@@ -1,0 +1,10 @@
+{
+  "@context": "https://schema.org",
+  "@id": "https://example.com/offer/1",
+  "@type": "Offer",
+  "availabilityStarts": "2026-01-01",
+  "price": 19.99,
+  "priceCurrency": "USD",
+  "sku": "SW-001",
+  "url": "https://example.com/offer/1"
+}

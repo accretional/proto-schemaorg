@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "props": {
+        "address": [
+          {
+            "props": {
+              "address_locality": [
+                "Metropolis"
+              ],
+              "postal_code": [
+                "54321"
+              ],
+              "street_address": [
+                "500 Corporate Blvd"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "name": [
+          "Acme Corp"
+        ]
+      },
+      "type": "Organization"
+    }
+  ],
+  "note": "Organization: nested PostalAddress"
+}

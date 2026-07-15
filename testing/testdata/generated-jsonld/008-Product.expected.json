@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "https://example.com/widget",
+      "props": {
+        "color": [
+          "blue"
+        ],
+        "gtin13": [
+          "0614141999996"
+        ],
+        "mpn": [
+          "925872"
+        ],
+        "name": [
+          "Super Widget"
+        ],
+        "sku": [
+          "SW-001"
+        ],
+        "url": [
+          "https://example.com/widget"
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: scalars + @id"
+}

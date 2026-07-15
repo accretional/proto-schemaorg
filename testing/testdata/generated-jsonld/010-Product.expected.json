@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Super Widget"
+        ],
+        "offers": [
+          {
+            "props": {
+              "price": [
+                "9.99"
+              ],
+              "price_currency": [
+                "USD"
+              ]
+            },
+            "type": "Offer"
+          }
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: nested Offer with a numeric price"
+}

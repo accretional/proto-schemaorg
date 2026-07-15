@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "cookTime": "PT45M",
+  "name": "Chocolate Cake",
+  "prepTime": "PT20M",
+  "recipeCategory": "Dessert",
+  "recipeCuisine": "French",
+  "totalTime": "PT65M",
+  "url": "https://example.com/cake"
+}

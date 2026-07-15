@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Acme Corp"
+        ],
+        "url": [
+          "https://acme.example"
+        ]
+      },
+      "type": "Organization"
+    },
+    {
+      "props": {
+        "name": [
+          "Acme Site"
+        ],
+        "url": [
+          "https://acme.example"
+        ]
+      },
+      "type": "WebSite"
+    }
+  ],
+  "note": "@graph: Organization + WebSite"
+}

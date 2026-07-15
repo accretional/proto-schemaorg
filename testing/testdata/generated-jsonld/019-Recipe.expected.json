@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "props": {
+        "author": [
+          {
+            "props": {
+              "name": [
+                "Chef Pierre"
+              ]
+            },
+            "type": "Person"
+          }
+        ],
+        "name": [
+          "Chocolate Cake"
+        ]
+      },
+      "type": "Recipe"
+    }
+  ],
+  "note": "Recipe: nested author Person"
+}

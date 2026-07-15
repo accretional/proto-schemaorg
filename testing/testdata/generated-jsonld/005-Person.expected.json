@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Jane Doe"
+        ],
+        "same_as": [
+          "https://a.example/jane",
+          "https://b.example/jane"
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: repeated (array) scalar property"
+}

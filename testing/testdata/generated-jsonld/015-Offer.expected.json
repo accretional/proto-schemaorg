@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "props": {
+        "price": [
+          "19.99"
+        ],
+        "price_currency": [
+          "USD"
+        ],
+        "seller": [
+          {
+            "props": {
+              "name": [
+                "Acme Store"
+              ]
+            },
+            "type": "Organization"
+          }
+        ]
+      },
+      "type": "Offer"
+    }
+  ],
+  "note": "Offer: nested seller Organization"
+}

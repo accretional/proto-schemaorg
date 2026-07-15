@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "props": {
+        "article_body": [
+          "Widgets are ..."
+        ],
+        "author": [
+          {
+            "props": {
+              "name": [
+                "Staff Writer"
+              ]
+            },
+            "type": "Person"
+          }
+        ],
+        "date_published": [
+          "2026-03-15"
+        ],
+        "headline": [
+          "Everything about widgets"
+        ],
+        "name": [
+          "Widgets Explained"
+        ],
+        "publisher": [
+          {
+            "props": {
+              "name": [
+                "Widget Times"
+              ]
+            },
+            "type": "Organization"
+          }
+        ]
+      },
+      "type": "Article"
+    }
+  ],
+  "note": "Article: text scalars + nested author and publisher"
+}

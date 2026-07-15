@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "props": {
+        "content_url": [
+          "https://cdn.example/p.jpg"
+        ],
+        "encoding_format": [
+          "image/jpeg"
+        ],
+        "name": [
+          "Product photo"
+        ],
+        "upload_date": [
+          "2026-02-02"
+        ]
+      },
+      "type": "ImageObject"
+    }
+  ],
+  "note": "ImageObject: media scalars"
+}

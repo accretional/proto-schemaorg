@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "https://example.com/jane#me",
+      "props": {
+        "email": [
+          "jane@example.com"
+        ],
+        "family_name": [
+          "Doe"
+        ],
+        "given_name": [
+          "Jane"
+        ],
+        "name": [
+          "Jane Doe"
+        ],
+        "telephone": [
+          "+1-555-0100"
+        ],
+        "url": [
+          "https://example.com/jane"
+        ]
+      },
+      "type": "Person"
+    }
+  ],
+  "note": "Person: scalars + @id"
+}

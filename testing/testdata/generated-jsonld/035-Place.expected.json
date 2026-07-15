@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "props": {
+        "address": [
+          {
+            "props": {
+              "postal_code": [
+                "10022"
+              ],
+              "street_address": [
+                "59th to 110th St"
+              ]
+            },
+            "type": "PostalAddress"
+          }
+        ],
+        "geo": [
+          {
+            "props": {
+              "latitude": [
+                "40.7829"
+              ],
+              "longitude": [
+                "-73.9654"
+              ]
+            },
+            "type": "GeoCoordinates"
+          }
+        ],
+        "name": [
+          "Central Park"
+        ]
+      },
+      "type": "Place"
+    }
+  ],
+  "note": "Place: geo scalars + nested address and GeoCoordinates"
+}

@@ -1,0 +1,10 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "logo": {
+    "@type": "ImageObject",
+    "contentUrl": "https://acme.example/logo.png",
+    "name": "Acme logo"
+  },
+  "name": "Acme Corp"
+}

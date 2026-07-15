@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "best_rating": [
+          "5"
+        ],
+        "rating_value": [
+          "3"
+        ],
+        "worst_rating": [
+          "1"
+        ]
+      },
+      "type": "Rating"
+    }
+  ],
+  "note": "Rating: numeric scalars"
+}

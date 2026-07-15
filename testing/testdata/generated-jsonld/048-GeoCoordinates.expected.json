@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "elevation": [
+          "10"
+        ],
+        "latitude": [
+          "40.7128"
+        ],
+        "longitude": [
+          "-74.006"
+        ]
+      },
+      "type": "GeoCoordinates"
+    }
+  ],
+  "note": "GeoCoordinates: numeric coordinates"
+}

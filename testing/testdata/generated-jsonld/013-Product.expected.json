@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "props": {
+        "name": [
+          "Super Widget"
+        ],
+        "review": [
+          {
+            "props": {
+              "review_body": [
+                "Great widget."
+              ],
+              "review_rating": [
+                {
+                  "props": {
+                    "best_rating": [
+                      "5"
+                    ],
+                    "rating_value": [
+                      "5"
+                    ]
+                  },
+                  "type": "Rating"
+                }
+              ]
+            },
+            "type": "Review"
+          }
+        ]
+      },
+      "type": "Product"
+    }
+  ],
+  "note": "Product: deep nesting (Product \u003e Review \u003e Rating)"
+}

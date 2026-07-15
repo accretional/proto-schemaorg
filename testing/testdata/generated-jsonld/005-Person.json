@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "sameAs": [
+    "https://a.example/jane",
+    "https://b.example/jane"
+  ]
+}

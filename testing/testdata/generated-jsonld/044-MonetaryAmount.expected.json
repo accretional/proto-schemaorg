@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "props": {
+        "currency": [
+          "USD"
+        ],
+        "max_value": [
+          "5000"
+        ],
+        "min_value": [
+          "1000"
+        ]
+      },
+      "type": "MonetaryAmount"
+    }
+  ],
+  "note": "MonetaryAmount: numeric range scalars"
+}

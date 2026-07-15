@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"google.golang.org/protobuf/reflect/protoreflect"
+	"google.golang.org/protobuf/reflect/protoregistry"
 	"google.golang.org/protobuf/types/dynamicpb"
 )
 
@@ -39,7 +40,9 @@ func (v Value) MarshalJSON() ([]byte, error) {
 }
 
 // Typed is a Build result: the resolved schema.org type local name and the
-// dynamicpb message.
+// message. Message is the concrete generated *schemaorgpb.Schema<Type> when the
+// bindings are linked (registered in the global proto registry), otherwise a
+// dynamicpb message over the embedded fdset — either way a protoreflect.ProtoMessage.
 type Typed struct {
 	Type    string
 	Message protoreflect.ProtoMessage
@@ -54,11 +57,23 @@ func Build(item *Item) (Typed, bool) {
 		if err != nil || md == nil {
 			continue
 		}
-		msg := dynamicpb.NewMessage(md)
+		msg := newMessage(md)
 		fill(msg, item)
-		return Typed{Type: LocalTypeName(t), Message: msg}, true
+		return Typed{Type: LocalTypeName(t), Message: msg.Interface()}, true
 	}
 	return Typed{}, false
+}
+
+// newMessage builds an empty, mutable message for md. When md names a concrete
+// generated Go type registered in the global registry, it constructs that type
+// via mt.New so Typed.Message can be type-asserted to the concrete
+// *schemaorgpb.Schema<Type>; otherwise it falls back to a dynamicpb message.
+// fill/fillWrapper operate on protoreflect.Message and work unchanged for both.
+func newMessage(md protoreflect.MessageDescriptor) protoreflect.Message {
+	if mt, err := protoregistry.GlobalTypes.FindMessageByName(md.FullName()); err == nil {
+		return mt.New()
+	}
+	return dynamicpb.NewMessage(md)
 }
 
 // fill populates a Schema<Type> message from an Item.
@@ -71,7 +86,11 @@ func fill(m protoreflect.Message, item *Item) {
 	}
 	for name, values := range item.Props {
 		f := FieldByName(md, name)
-		if f == nil {
+		if f == nil || !f.IsList() {
+			// Every modeled property is a repeated field; the only singular field
+			// is `id` (filled above from @id/itemid). A property that resolves to
+			// a singular field is a name collision (e.g. a bare "id" property, not
+			// @id) — skip it rather than call Mutable().List() on a scalar (panic).
 			continue
 		}
 		list := m.Mutable(f).List()
